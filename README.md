@@ -5,3 +5,5 @@ This is the Frontend part. I have used html, css, and vanilla js. to build the f
 Here, you can upload any file(max 100mb) and you will get a download link.
 You can share the download link with your friends to download the file.
 You can send email too providing your valid gmail and receiver's valid gmail.
+
+Here, I have used index.php file as a dummy backend file for the deployment of the Frontend website.
