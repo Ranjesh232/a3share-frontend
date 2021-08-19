@@ -1,0 +1,250 @@
+body , html{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #c1d7f8;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+body , .drop-zone, .progress-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body{
+    flex-direction: row;
+}
+.logo img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+.upload-container{
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0px 20px 20px #0000005e;
+}
+
+.drop-zone{
+    width: 500px;
+    min-height: 200px;
+    border: 3px dashed grey;
+    margin: 30px;
+    border-radius: 10px;
+    transition: all .2s ease;
+}
+
+.icon-container{
+    width: 85px;
+    height: 100px;
+    position: relative;
+}
+
+.icon-container img{
+    width: 85px;
+    position: absolute;
+    transform-origin: bottom;
+    transition: transform 250ms ease-in-out;
+}
+
+.icon-container .center{
+    z-index: 2;
+}
+
+.icon-container .right, .icon-container .left{
+    filter: grayscale(.5);
+    transform: scale(.9);
+}
+
+.dragged.drop-zone{
+    background: #c1d7f8;
+    border-color: blue;
+}
+
+.dragged .icon-container .right{
+    transform: rotate(15deg) translateX(25px) scale(.9);
+
+}
+
+.dragged .icon-container .left{
+    transform: rotate(-15deg) translateX(-25px) scale(.9);
+
+}
+
+.dragged .icon-container .center{
+    transform: translateY(-5px);
+}
+
+.browseBtn{
+    color:blue;
+    cursor: pointer;
+}
+
+#inputFile{
+    display: none;
+}
+
+.progress-container{
+    width: 500px;
+    height: 70px;
+    border: 2px solid grey;
+    margin: 30px;
+    border-radius: 10px;
+    position: relative;
+    display: none;
+}
+
+.progress-container .bg-progress{
+    background: #c1d7f8;
+    width: 0%;
+    height: 100%;
+    align-self: start;
+    border-radius: 2%;
+    transition: width .25ms linear;
+    position: absolute;
+}
+
+.progress-container .inner-container{
+    position: absolute;
+    z-index: 1;
+    margin: 10px 15px;
+    align-self: start;
+    width: calc(100% - 30px);
+}
+
+.progress-bar{
+    height: 3px;
+    width: 100%;
+    background: blue;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform .25ms linear;
+}
+
+.sharing-container{
+    width: 500px;
+    margin: 30px;
+    display: none;
+}
+
+p{
+    opacity: .7;
+    text-align: center;
+}
+
+.sharing-container .input-container{
+    position: relative;
+}
+
+.sharing-container .input-container input{
+    width: 100%;
+    border: 2px dashed grey;
+    border-radius: 6px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #04163d5d;
+    background: #f5fcff;
+}
+
+.input-container img{
+    cursor: pointer;
+    position: absolute;
+    height: 42px;
+    width: 30px;
+    right: 7px;
+}
+
+.email-container{
+    display: flex;
+    align-items: center;
+}
+
+.email-container form{
+    width: 100%;
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.email-container .field{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    width: 450px;
+}
+
+.email-container label{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.email-container input{
+    font-size: 20px;
+    border: none;
+    border-bottom: 2px solid grey;
+    text-align: center;
+}
+
+.email-container input:focus{
+    outline: none;
+}
+
+.email-container button{
+    font-size: 20px;
+    padding: 8px 40px;
+    margin-top: 15px;
+    background: #c1d7f8;
+    border: none;
+    border-radius: 5px;
+    color: #607d8b;
+    cursor: pointer;
+}
+
+.toast{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%,70px);
+    transition: transform ease-in-out .2s;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: #03a9f4;
+    color: #fff;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+.upload-vector{
+    background: url(upload3.svg) no-repeat center;
+    background-size: contain;
+    height: 50vh;
+    width: 50vw;
+}
+
+@media screen and (max-width: 900px){
+    .drop-zone, .progress-container, .sharing-container{
+        width: 300px;
+    }
+
+    .logo img{
+        width: 100px;
+    }
+
+    .upload-vector{
+        display: none;
+    }
+    .email-container .field{
+        flex-direction: column;
+        width: 250px;
+    }
+}
